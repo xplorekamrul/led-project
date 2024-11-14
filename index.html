@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>led</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: aqua;
+        }
+        .images{
+            position: relative;
+            height: 500px;
+        }
+
+        #ledOne {
+            visibility: hidden;
+            height: 275px;
+            width: 200px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+
+        }
+        #ledTwo {
+           visibility: visible;
+           height: 275px;
+            width: 200px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+           
+        }
+        .buttons button {
+            padding: 10px 20px;
+            background: #01f436fb;
+            cursor: pointer;
+            border: none;
+            border-radius: 10%;
+           
+        }
+        .buttons button:hover{
+            font-weight: 700;
+        }
+        #ledthree {
+            height: 275px;
+            width: 200px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #ledfour{
+            height: 275px;
+            width: 200px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+   <div class="images">
+    <img id="ledOne" src="./led (1).png" alt="led (1).png">
+    <img id="ledTwo" src="./led (2).png" alt="led (2).png">
+   </div>
+   <div class="buttons">
+    <button onclick="ledOn()"> Light on</button>
+    <button onclick="ledOff()" style="margin-left: 100px;"> Light off</button>
+   </div>
+   <!-- 2nd  -->
+   <div class="images">
+    <img id="ledthree" src="./led (2).png" alt="led (1).png">
+   </div>
+   <div class="buttons">
+    <button onclick="ledthree()"> Light on</button>
+    <button onclick="ledfour()" style="margin-left: 100px;"> Light off</button>
+   </div>
+
+   <script>
+        function ledOn (){
+            const ledOne = document.getElementById('ledOne') ;
+            const ledTwo = document.getElementById('ledTwo') ;
+            ledOne.style.visibility='visible'
+            ledTwo.style.visibility='hidden'
+           
+        }
+        function ledOff (){
+            const ledOne = document.getElementById('ledOne') ;
+            const ledTwo = document.getElementById('ledTwo') ;
+            ledOne.style.visibility='hidden'
+            ledTwo.style.visibility='visible'
+        }
+
+        //2nd solution
+       
+        function ledthree (){
+            const ledthree = document.getElementById('ledthree');
+            ledthree.src='./led (1).png'
+        }
+        function ledfour (){
+            const ledfour = document.getElementById('ledthree');
+            ledfour.src='./led (2).png'
+        }
+   </script>
+</body>
+</html>
